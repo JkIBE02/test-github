@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Management and Microservices Simulation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background: #f3f6fa;
+    }
+    h1 {
+        color: #1a4d8f;
+    }
+    nav a {
+        margin: 10px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+    nav a:hover {
+        color: white;
+        background: #0066cc;
+        border-radius: 5px;
+    }
+    #output {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #ffffff;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+        margin-top: 30px;
+        font-style: italic;
+        text-align: center;
+        color: #444;
+    }
+</style>
+</head>
+<body>
+
+<h1>API Management and Microservices Simulation</h1>
+<p>Click on any service below to see how it works with the API Gateway:</p>
+
+<nav>
+    <a href="#" onclick="showService('user')">User Service</a> |
+    <a href="#" onclick="showService('catalog')">Catalog Service</a> |
+    <a href="#" onclick="showService('cart')">Cart Service</a> |
+    <a href="#" onclick="showService('order')">Order Service</a> |
+    <a href="#" onclick="showService('payment')">Payment Service</a>
+</nav>
+
+<div id="output">Click a service to view its API interaction.</div>
+
+<script>
+function showService(service) {
+    const descriptions = {
+        user: "🧑‍💼 <b>User Service:</b> Handles user registration, login, and token-based authentication through the API Gateway, which ensures that all requests are secure before reaching the backend.",
+        catalog: "📦 <b>Catalog Service:</b> Provides product details and manages inventory. The API Gateway routes all product requests here when users browse or search for items.",
+        cart: "🛒 <b>Cart Service:</b> Stores selected products for each user session. The API Gateway ensures secure and authenticated communication between the client and this service.",
+        order: "📦 <b>Order Service:</b> Coordinates the checkout process, verifies user cart data, and communicates with the Payment Service through the API Gateway to confirm purchases.",
+        payment: "💳 <b>Payment Service:</b> Manages and validates all transactions. The API Gateway enforces authentication, rate limits, and data protection for every payment request."
+    };
+    document.getElementById("output").innerHTML = descriptions[service];
+}
+</script>
+
+<footer>
+Prepared by: <b>Kenneth Ibe</b> | Date: October 28, 2025
+</footer>
+
+</body>
+</html>
