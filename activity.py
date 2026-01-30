@@ -9,7 +9,7 @@ class Car:
         print(f"Color: {self.color}, Model: {self.model}, Manufacturer: {self.manufacturer}")
         
 # First 3 Car Objects
-car1 = Car("Green", "Civic", "Honda")
+car1 = Car("Red", "Civic", "Honda")
 car2 = Car("Blue", "Corolla", "Toyota")
 car3 = Car("Black", "Model S", "Tesla")
 
